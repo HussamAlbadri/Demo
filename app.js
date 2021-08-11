@@ -120,7 +120,30 @@ Lima.salmonCookies(12, 34);
 Lima.getRandom();
 Lima.render();
 
+
+
+let salesInput = document.getElementById('sale');
+salesInput.addEventListener('submit', newItem);
+
+function newItem(event) {
+    event.preventDefault();
+    let Place = event.target.Place.value;
+    let minimunCus = event.target.minimunCus.value;
+    let maximumCus = event.target.maximumCus.value;
+    let averageCookiesEachHour = event.target.averageCookiesEachHour.value;
+    tableEl.deleteRow(-1);
+    let addItem = new salmon(Place, minimunCus, maximumCus, averageCookiesEachHour);
+
+    addItem.salmonCookies(12, 34)
+    addItem.getRandom();
+    addItem.render();
+    document.getElementById('sale').reset();
+    Footer();
+}
 Footer();
+
+
+
 
 
 

@@ -3,17 +3,22 @@
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff, 0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
 }
 
-
-/* general styling */
-
- :root {
-    font-size: calc(1vw + 1vh + 1.5vmin);
+:root {
+    font-size: 30px;
 }
 
-html,
-body {
-    height: 100%;
-    margin: 0;
+a {
+    border: 3px solid gray;
+    border-radius: 3px;
+    text-decoration: none;
+    background-color: gray;
+    color: white;
+}
+
+a:hover {
+    background-color: #fff;
+    color: black;
+    transition: 300ms ease-in;
 }
 
 .container {
@@ -24,13 +29,9 @@ body {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    background-color: #010a00;
+    background-color: #393a3985;
     background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    font-size: 1rem;
 }
 
 #img {
@@ -38,10 +39,16 @@ body {
     margin-left: 5px;
 }
 
+#container {
+    display: block;
+    margin: 70px;
+    border: 2px solid #0ff;
+}
+
 td,
 th {
     border: 1px solid white;
-    color: azure;
+    color: aliceblue;
     padding: 5px 10px;
     text-align: center;
 }
@@ -53,4 +60,115 @@ input {
 fieldset {
     width: 220px;
     padding: 15px;
+}
+
+.card {
+    width: 70%;
+    padding: 30px 90px 90px 90px;
+    border: 6px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 50px;
+    position: relative;
+}
+
+.card h2 {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 60px;
+    text-transform: uppercase;
+}
+
+.card .row {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid: auto / auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+    grid-gap: 30px;
+}
+
+.card .row .col {
+    position: relative;
+    width: 100%;
+    margin: 30px 20px 40px 0;
+    transition: 0.5s;
+}
+
+.card .row .form-group {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    color: #ffffff;
+}
+
+.card .row .form-group input,
+.card .row .form-group textarea {
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    font-size: 24px;
+    padding: 10px 0 10px 20px;
+    border: 5px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    border-radius: 50px;
+}
+
+.card .row .form-group label {
+    line-height: 40px;
+    color: #ffffff;
+    font-size: 24px;
+    margin: 0 0 0 30px;
+    display: block;
+    pointer-events: none;
+}
+
+.row .col:nth-child(6) {
+    margin-top: 64px;
+}
+
+.card .row .form-group input:focus,
+.card .row .form-group textarea:focus {
+    border: 5px solid #ffffff;
+    transition: all 0.5s;
+}
+
+.card .row input[type="submit"] {
+    border: 5px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    height: 100%;
+    width: 50%;
+    cursor: pointer;
+    outline: none;
+    background: transparent;
+    text-transform: uppercase;
+    color: #ffffff;
+    line-height: 40px;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 45px;
+    transition: all 0.4s;
+}
+
+.card .row input[type="submit"]:hover {
+    border: 5px solid rgba(255, 255, 255, 1);
+    color: #ffffff;
+    transition: all 0.4s;
+}
+
+@media screen and (max-width: 900px) {
+    .card .row {
+        grid-template-columns: repeat(auto-fit, minmax(70%, 1fr));
+    }
+    .card {
+        padding: 20px;
+    }
+    .card h2 {
+        font-size: 34px;
+    }
+    .card .row input[type="submit"] {
+        width: 100%;
+    }
 }
